@@ -1,0 +1,79 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  my_tag:
+    type: page
+    label: My Tag
+    folder: _my_tags
+    match: '*'
+    fields:
+      - type: string
+        name: slug
+        label: Slug
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: description
+        label: Description
+  post:
+    type: page
+    label: Post
+    folder: _posts
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: hero
+        label: Hero
+      - type: string
+        name: overlay
+        label: Overlay
+      - type: boolean
+        name: published
+        label: Published
+  page_1:
+    type: page
+    label: Page 1
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: boolean
+        name: published
+        label: Published
+      - type: number
+        name: weight
+        label: Weight
+        subtype: int
+      - type: object
+        name: sitemap
+        label: Sitemap
+        fields:
+          - type: number
+            name: priority
+            label: Priority
+            subtype: float

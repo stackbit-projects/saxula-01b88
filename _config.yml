@@ -1,0 +1,72 @@
+baseurl: ''
+url: ''
+blog:
+  title: dactl
+  description: |
+    this should contain a proper description
+  logo_path: assets/img/dactl.svg
+  search_path: null
+  hero_layout: true
+  hero_placeholder: assets/img/generic_hero.jpg
+  excerpts: true
+  inline_footnotes: true
+  titles_only: false
+  font: '"Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif'
+  load_google_fonts: 'Rubik:400,400italic,700,700italic'
+author:
+  fullname: Your Name
+  rss: true
+  mail: your@email.com
+  twitter: twitter-user-name
+  github: github-user-name
+  youtube: youtube-user-name
+  stackoverflow: stackoverflow-user-name
+  disqus: dactl
+  google_analytics: null
+  photo: uploads/me2.png
+  photo2x: uploads/me.png
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+permalink: 'posts/:slug'
+excerpt_separator: <!–-break-–>
+paginate: 5
+paginate_path: '/page-:num/'
+collections:
+  my_tags:
+    output: true
+    permalink: '/tag/:slug/'
+defaults:
+  - scope:
+      path: ''
+      type: my_tags
+    values:
+      layout: blog-by-tag
+exclude:
+  - README.md
+  - README.html
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+sass:
+  sass_dir: _sass
+  style: compressed
+compress_html:
+  clippings: all
+  endings: all
+  comments:
+    - '<!-- '
+    - ' -->'
+  blanklines: true
+  profile: false
+  ignore: null
+  envs:
+    - local
